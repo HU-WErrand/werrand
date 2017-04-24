@@ -1,0 +1,68 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<script type="text/javascript">
+function set_openid(openid, pr)
+{
+    u = openid.search('<username>')
+    if (u != -1) {
+        // openid requires username
+        user = prompt('Enter your ' + pr + ' username:')
+        openid = openid.substr(0, u) + user
+    }
+    form = document.forms['login'];
+    form.elements['openid'].value = openid
+}
+</script>
+<div id="wrapper" style="width:1366px;">
+
+ <div style="background:rgba(100,100,100,0.5); width:49%; float:left;""id="leftPane>">
+<h1 >Sign In</h1>
+
+<form style="float:rightaction="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+        Please enter your OpenID, or select one of the providers below:<br>
+        |{% for pr in providers %}
+          <a href="javascript:set_openid('{{ pr.url }}', '{{ pr.name }}');">{{ pr.name }}</a> |
+        {% endfor %} <br>
+		
+		Username:&nbsp&nbsp{{ form.openid(size=80) }}
+        {% for error in form.openid.errors %}
+          <span style="color: red;"><br>[{{error}}]</span>
+        {% endfor %}<br><br>
+        Password: &nbsp&nbsp{{ form.password(size=30) }} <br>
+		{% for error in form.password.errors %}
+          <span style="color: red;">[{{error}}] <br></span>
+        {% endfor %}
+		<a  href="https://developers.google.com/identity/protocols/OpenIDConnect"> <img style="width:35%; vertical-align:middle; padding-left:5px; padding-top:10px;" src="{{ url_for('static', filename='images/google-sign-in.png') }}"> </a> <br>
+    </p>
+    <p>{{ form.remember_me }} Remember Me</p>
+    <p><input type="submit" value="Sign In"></p>
+</form>
+
+ </div>
+ 
+ <div style="background:rgba(100,100,100,0.5); width:49%; float:right; padding:5px;""id="leftPane>">
+<h1 >Register</h1>
+
+<form style="float:right action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+       
+		<img style="width:6%; vertical-align:middle; padding:0px;"src="{{ url_for('static', filename='images/yahooLogo.png') }}"> <a href="http://openid.yahoo.com/"> Yahoo OpenID </a>
+        <br>
+		<img style="width:6%; vertical-align:middle; padding:0px;"src="{{ url_for('static', filename='images/flickerLogo.png') }}"> <a href="https://www.flickr.com/groups/openid/"> Flicker OpenID </a>
+        <br>
+		<img style="width:6%; vertical-align:middle; padding:0px;"src="{{ url_for('static', filename='images/logoOID.png') }}"> <a href="http://openid.net/start-using-your-openid/"> MyOpenID </a>
+		
+    </p>
+    
+</form>
+
+ </div>
+
+ 
+ </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+
+
+<html>
+<head>
+	
+	<link rel = "stylesheet" href = "{{ url_for('static', filename='stylesheets/navigation.css') }}">
+    {% if title %}
+    <title>{{ title }} - WErrand</title>
+    {% else %}
+    <title>Welcome to WErrand</title>
+    {% endif %}
+ </head>
+  <body>
+       <div style="float:left; width:20%; "id="rightPane">
+ 
+ </div>
+	  <div id="menu">
+	  <img style="max-width:20%; padding:0px; height:auto;" src="{{ url_for('static', filename='images/logo1.png') }}">
+		<ul>
+			<li> <a { color: black; } href="{{ url_for('index') }}">Home</a> </li>
+			<li> Wall page </li>
+			<li> Setting </li>
+			<li> Profile </li>
+			<li> Help </li>
+		</ul>
+	</div>
+        
+        {% if g.user.is_authenticated %}
+        | <a href="{{ url_for('user', nickname=g.user.nickname) }}">Your Profile</a>
+        | <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+    </div>
+	 {% if g.user.is_authenticated %}
+        | <a href="{{ url_for('logout') }}">Logout</a>
+      {% endif %}
+    <hr>
+	{%with messages = get_flashed_messages()%}
+	{%if messages%}
+	<ul>
+	{%for message in messages%}
+	<li>{{message}}</li>
+	{%endfor%}
+	{%endif%}
+	{%endwith%}
+	{%block content%}{%endblock%}
+  </body>
+</html>
