@@ -1,0 +1,178 @@
+<! DOCTYPE html>
+<html>
+<head>
+     <title></title>
+     <style>
+	 
+#menu{
+width:100%;
+margin:0px;
+}
+
+#menu ul{
+	width:80%;
+	float:right;
+list-style:none;
+margin:0px;
+padding:0px;
+padding-top:10px;
+}
+
+#menu ul li{
+border: solid #cccccc 1px;
+float:left;
+width:19.8%;
+text-align:center;
+/*background-color:#ffffcc;*/
+background:-moz-linear-gradient(top,#870707, #b90e0e);
+color:#ffffff;
+height:30px;
+padding-top:10px;
+-moz-transition:background 0.5s;
+
+
+}
+
+#menu ul li:hover{
+background:#000000;
+
+}
+
+#box{
+color:#ffffff;
+text-align:center;
+height:200px;
+width:200px;
+background:#2c4d4f;
+-moz-transition:height 2s, width 2s, background 2s, -moz-transform 1s;
+clear:both;
+border:2px solid;
+border-radius:25px;
+box-shadow:10px 10px 5px #888888;
+}
+
+a:link { color: white; }
+a:visited { color: white; }
+a:hover { color: green; }
+#box:hover{
+height:400px;
+width:400px;
+background:#b31616;
+-moz-transform:rotate(360deg);
+}
+
+         div {
+            height: 200 px;
+            width: 50%;
+         }
+         form {
+            color: red;
+         }
+         div.filter{border-style: solid; color: white;border-width: 0px; text-align: center; width: 900px;
+                    height: 200px;}
+        div.first{padding-left: 1px;}
+        div.two {padding-bottom: 4px}
+        div.second{padding-left: 15px;}
+        div.three {padding-bottom: 4px;}
+
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            border-style: solid; color: white;
+             width: 75%; padding-top: 0px;
+             table-layout: fixed;
+
+         }
+         .table {
+    vertical-align: middle;
+    display: table-cell;
+
+  }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: white;
+    }
+
+tr:nth-child(even) {
+    background-color: grey;
+}
+
+     </style>
+
+    }
+</head>
+<body style="background-color:black;">
+<div id="menu">
+	  
+		<ul>
+			<li> <a { color: black; } href="{{ url_for('index') }}">Home</a> </li>
+			<li> Wall page </li>
+			<li> Setting </li>
+			<li> Profile </li>
+			<li> Help </li>
+		</ul>
+	</div>
+    <div class="app">
+        <h1 style="text-align: center; width: 1250px; color:red;"> Your News Feed </h1>
+        <div class="filter">
+            <div class = "head"; style="color:red; text-align: center;"> <h3> Filer by Location </h3></div>
+            <label for="Source" style="margin: 220px;">
+        <span>Source:</span>
+        <input type="text" id="source" />
+            </label>
+        <label for="Destinaton" >
+         <span>Destinaton:</span>
+         <input type="text" id="destination" />
+        </label>
+        </div>
+    </div>
+    <div class="table">
+    <table align= "center">
+        <tr>
+            <th>Order</th>
+            <th>Pickup Location </th>
+            <th>Drop Location </th>
+            <th>   </th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><form style="text-align:center"><input type=submit value="Take Order" style="width:130px; padding-left: 5px";></form></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><form style="text-align:center"><input type=submit value="Take Order" style="width:130px; padding-left: 5px";></form></td>
+  </tr>
+  <tr>
+   <td></td>
+    <td></td>
+    <td></td>
+    <td><form style="text-align:center"> <input type=submit value="Take Order" style="width:130px; padding-left: 5 px";> </form></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <br>
+    <br>
+    <td> <form style="text-align:center"> <input type=submit value="Take Order" style="width:130px; padding-left: 5px";> </form></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><form style="text-align:center"> <input type=submit value="Take Order" style="width:130px; padding-left: 5px";> </form></td>
+  </tr>
+</table>
+
+
+    </div>
+    </body>
+    </html>

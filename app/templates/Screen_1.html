@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h2 {
+    text-indent: 500px;
+    size: 27;
+    background-color: #870707;
+}
+h1 {
+    color: #870707;
+}
+div {
+     height: 200px;
+    width: 50%;
+}
+div.screenshot{
+    width: 3000px; height:228px;
+    padding-left: 50px;
+}
+
+#menu{
+width:100%;
+height:50px;
+margin:0px;
+}
+
+#menu ul{
+	width:80%;
+	float:right;
+list-style:none;
+margin:0px;
+padding:0px;
+padding-top:10px;
+}
+
+#menu ul li{
+border: solid #cccccc 1px;
+float:left;
+width:19.8%;
+text-align:center;
+/*background-color:#ffffcc;*/
+background:-moz-linear-gradient(top,#870707, #b90e0e);
+color:#ffffff;
+height:30px;
+padding-top:10px;
+-moz-transition:background 0.5s;
+
+
+}
+
+#menu ul li:hover{
+background:#000000;
+
+}
+
+#box{
+color:#ffffff;
+text-align:center;
+height:200px;
+width:200px;
+background:#2c4d4f;
+-moz-transition:height 2s, width 2s, background 2s, -moz-transform 1s;
+clear:both;
+border:2px solid;
+border-radius:25px;
+box-shadow:10px 10px 5px #888888;
+}
+
+a:link { color: white; }
+a:visited { color: white; }
+a:hover { color: green; }
+#box:hover{
+height:400px;
+width:400px;
+background:#b31616;
+-moz-transform:rotate(360deg);
+}
+
+</style>
+</head>
+
+<body style="background-color:black;">
+<div id="menu">
+	
+		<ul>
+			<li> <a { color: black; } href="{{ url_for('index') }}">Home</a> </li>
+			<li> Wall page </li>
+			<li> Setting </li>
+			<li> Profile </li>
+			<li> Help </li>
+		</ul>
+	</div>
+    <h2 style="color:white; font-family:Times NewRoman;"> Welcome to </h2>
+    <div class = "screenshot"><img style="width:30%;"src = "logo1.png"></div>
+    <div style = "color:white;padding:20px;">
+        <h2 style="text-indent: 0px;"> Our purpose</h2>
+        <p>Imagine that you are a salesman at shell shop and get a monthly pay of Rs. 20,000. You have to
+manage all your expenses in this budget, which includes but is not limited to: Food, electricity bill,
+water bill, clothing, and other daily need items. You are living from hand to mouth. One fine day
+you wake up and find out that the nearest grocery shop has shifted to another town. You can’t
+afford traveling all the way towards it just to buy eggs. Instead, you tackle the situation smartly:
+you pick your cell, log on to this website and post  &quotHey, I need EGGS, urgency level is 4/10&quot and
+another user who is already traveling to the shop will ACCEPT your task, and will bring you eggs for
+a nominal fee. This way, you will save your travelling expense, and the user who was already
+traveling to do his task won’t travel for free. Cumulative energy is saved and time is utilized to do
+another productive task. One good turn deserves another</p>
+     
+
+    </div>
+
+</body>
+</html>
